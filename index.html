@@ -9,11 +9,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <div>
-        <div id="countryDisplay">Country: </div>
-        <div id="playerCountry"></div>
+    <div id="countrySelectorScreen">
+        <label for="country-select">Choose a country:</label>
+
+        <select name="countries" id="country-select">
+        <option value="">--Please choose an option--</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="Germany">Germany</option>
+        <option value="Japan">Japan</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+</select>
     </div>
 </body>
 
-<script src="script.js"></script>
+<script src="script.js" type="module"></script>
 </html>

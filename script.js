@@ -1,3 +1,5 @@
+import Stats from 'https://cdnjs.cloudflare.com/ajax/libs/stats.js/17/Stats.js'
+
 let countryList = [ 
   {name: 'Afghanistan', code: 'AF'}, 
   {name: 'Albania', code: 'AL'}, 
@@ -201,9 +203,24 @@ let countryList = [
   {name: 'Zimbabwe', code: 'ZW'} 
 ];
 
-function randomCountrySelector(){
-  let randomNumber = Math.floor(Math.random() * countryList.length);
-  let randomCountryName = countryList[randomNumber].name;
-  $('#playerCountry').html(randomCountryName);
+
+
+//
+// FPS Counter
+//
+const stats = new Stats();
+stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+stats.dom.style.position = 'absolute';
+stats.dom.style.top = '95%';
+stats.dom.style.left = '0px';
+stats.dom.style.zIndex = '100'; // Make sure it's above other elements
+stats.dom.style.display = 'inline';
+document.body.appendChild(stats.dom);
+
+
+function animate(){
+  stats.begin();
+  requestAnimationFrame(animate);
+  stats.end();
 }
-randomCountrySelector();
+animate();
